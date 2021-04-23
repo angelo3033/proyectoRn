@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {View,StyleSheet,Text,Image,TextInput,Dimensions,TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import Icon from 'react-native-vector-icons/Ionicons';
-
 const { width: WIDTH } = Dimensions.get('window')
 
 export default class Login extends Component {
@@ -35,10 +33,12 @@ export default class Login extends Component {
     };
 
     render() {
+
         return ( 
-            <LinearGradient colors={['#0F2027', '#203A43', '#2C5364']} style={styles.linearGradient}>
+            <LinearGradient colors={['#000046', '#1CB5E0', '#000046']} style={styles.linearGradient}>
+                <Image source={require('../../../img/cuevana3.png')} style={styles.logo}/>
                 <View style={styles.logoContainer}>
-                    <Text style={styles.titulo}>Login</Text>
+                    <Text style={styles.titulo}>Bienvenido a Cuevana3</Text>
                 </View>
 
                 <View style={styles.inputsContainer}>
@@ -47,7 +47,6 @@ export default class Login extends Component {
                         placeholder={'Username'}
                         onChangeText={text => this.changeTextInput(text)}
                         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                        underlineColorAndroid='transparent'
                     />
                 </View>
 
@@ -59,7 +58,6 @@ export default class Login extends Component {
                         secureTextEntry={true}
                         onChangeText={text => this.changeTextInput2(text)}
                         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                        underlineColorAndroid='transparent'
                     />
                 </View>
 
@@ -82,14 +80,17 @@ const styles = StyleSheet.create({
     },
     logoContainer: {
         alignItems: 'center',
-        marginBottom: 50,
+        marginBottom: 25,
+    },
+    logo: {
+        width: 120,
+        height: 120,
     },
     titulo: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: '500',
         marginTop: 10,
-        opacity: 0.5,
     },
     inputsContainer: {
         marginTop: 10,
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
         paddingLeft: 45,
         backgroundColor: 'rgba(0, 0, 0, 0.35)',
         color: 'rgba(255, 255, 255, 0.7)',
-        marginHorizontal: 25,
+        marginHorizontal: 20,
     },
     icon: {
         position: 'absolute',
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
         width: WIDTH - 55,
         height: 45,
         borderRadius: 45,
-        backgroundColor: '#432577',
+        backgroundColor: '#000046',
         justifyContent: 'center',
         marginTop: 20,
     },
